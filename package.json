@@ -1,0 +1,46 @@
+{
+  "name": "koa-qs-lru",
+  "version": "0.1.0",
+  "description": "Nested query string support for Koa using LRU cache.",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha",
+    "test-cov": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+    "test-travis": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly"
+  },
+  "author": "Pierre Brouca <pierre.brouca@icloud.com> (https://github.com/broucz)",
+  "license": "MIT",
+  "homepage": "https://github.com/broucz/koa-qs-lru#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/broucz/koa-qs-lru.git"
+  },
+  "bugs": {
+    "url": "https://github.com/broucz/koa-qs-lru/issues"
+  },
+  "keywords": [
+    "koa",
+    "querystring",
+    "qs",
+    "cache",
+    "lru"
+  ],
+  "dependencies": {
+    "lru-cache": "^2.7.0",
+    "merge-descriptors": "^1.0.0",
+    "qs": "^5.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "istanbul": "^0.4.0",
+    "koa": "^1.1.0",
+    "mocha": "^2.3.3",
+    "supertest": "^1.1.0"
+  },
+  "engines": {
+    "node": ">= 4"
+  },
+  "files": [
+    "index.js"
+  ]
+}
