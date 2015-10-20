@@ -12,6 +12,10 @@ var app = koa()
 require('koa-qs-lru')(app)
 ```
 
+## License
+
+[MIT](LICENSE)
+
 [npm-image]: https://img.shields.io/npm/v/koa-qs-lru.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/koa-qs-lru
 [travis-image]:https://img.shields.io/travis/broucz/koa-qs-lru.svg?style=flat-square
