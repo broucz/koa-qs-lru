@@ -6,10 +6,53 @@
 [![David deps][david-image]][david-url]
 [![npm download][download-image]][download-url]
 
+By default, Koa uses the native `querystring` [module](https://github.com/Gozala/querystring) which does not provide nesting support and caches parsed results in a plain object regardless of his size.
+
+This pathes a Koa app with:
+- [qs](https://www.npmjs.com/package/qs) (a querystring parsing and stringifying library with some added security)
+- [lru-cache](https://www.npmjs.com/package/lru-cache) (a cache object that deletes the least-recently-used items)
+
+## Installation
+
+```
+$ npm install --save koa-qs-lru
+```
+
+## Usage
+
 ```js
 var koa = require('koa')
-var app = koa()
-require('koa-qs-lru')(app)
+var qs = require('koa-qs-lru');
+
+// qs & lru-cache default settings
+var app = qs(koa());
+
+// custom settings
+var app = qs(koa(), {
+  cache: {},     // lru-cache options
+  parse: {},     // qs -> parse options
+  stringify: {}  // qs -> stringify options
+});
+```
+
+Check [qs](https://www.npmjs.com/package/qs) and [lru-cache](https://www.npmjs.com/package/lru-cache) packages for API documentation.
+
+## Example
+
+```js
+var koa = require('koa')
+var qs = require('koa-qs-lru');
+
+var app = qs(koa(), {
+  cache: { max: 1000 },         // Keep last 1000 used query objects in cache
+  parse: { parameterLimit: 1 }  // Parse only the first parameter
+});
+
+app.use(function *() {
+  this.body = this.query;
+});
+
+app.listen(3000);
 ```
 
 ## License
