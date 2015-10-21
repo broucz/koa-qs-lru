@@ -36,4 +36,4 @@ git push origin $next_ref
 
 echo "$(node -p "p=require('./package.json');delete p.private;JSON.stringify(p,null,2)")" > package.json
 
-cd release && npm publish . --tag $NPM_TAG
+npm publish . --tag $NPM_TAG
