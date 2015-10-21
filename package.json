@@ -1,6 +1,6 @@
 {
   "name": "koa-qs-lru",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Nested query string support for Koa using LRU cache.",
   "main": "index.js",
   "scripts": {
