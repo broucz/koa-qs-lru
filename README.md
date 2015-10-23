@@ -55,6 +55,10 @@ app.use(function *() {
 app.listen(3000);
 ```
 
+## Credits
+
+Inspired by [koa-qs](https://github.com/koajs/qs).
+
 ## License
 
 [MIT](LICENSE)
